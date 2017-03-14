@@ -14,6 +14,7 @@
 		5D82FA701E784AD800C1B7D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D82FA6E1E784AD800C1B7D3 /* LaunchScreen.storyboard */; };
 		5D82FA7B1E784AD800C1B7D3 /* StretchMyHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82FA7A1E784AD800C1B7D3 /* StretchMyHeaderTests.swift */; };
 		5D82FA861E784B2900C1B7D3 /* StretchyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82FA851E784B2900C1B7D3 /* StretchyTableViewCell.swift */; };
+		5DF46CEE1E787D0000C03B50 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF46CED1E787D0000C03B50 /* NewsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		5D82FA7A1E784AD800C1B7D3 /* StretchMyHeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchMyHeaderTests.swift; sourceTree = "<group>"; };
 		5D82FA7C1E784AD800C1B7D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D82FA851E784B2900C1B7D3 /* StretchyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyTableViewCell.swift; sourceTree = "<group>"; };
+		5DF46CED1E787D0000C03B50 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				5D82FA651E784AD800C1B7D3 /* AppDelegate.swift */,
 				5D82FA671E784AD800C1B7D3 /* ViewController.swift */,
+				5DF46CED1E787D0000C03B50 /* NewsItem.swift */,
 				5D82FA851E784B2900C1B7D3 /* StretchyTableViewCell.swift */,
 				5D82FA691E784AD800C1B7D3 /* Main.storyboard */,
 				5D82FA6C1E784AD800C1B7D3 /* Assets.xcassets */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D82FA861E784B2900C1B7D3 /* StretchyTableViewCell.swift in Sources */,
+				5DF46CEE1E787D0000C03B50 /* NewsItem.swift in Sources */,
 				5D82FA681E784AD800C1B7D3 /* ViewController.swift in Sources */,
 				5D82FA661E784AD800C1B7D3 /* AppDelegate.swift in Sources */,
 			);
@@ -414,6 +418,7 @@
 				5D82FA811E784AD800C1B7D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D82FA821E784AD800C1B7D3 /* Build configuration list for PBXNativeTarget "StretchMyHeaderTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				5D82FA841E784AD800C1B7D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
