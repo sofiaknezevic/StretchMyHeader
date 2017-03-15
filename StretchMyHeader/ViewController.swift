@@ -8,20 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
+    
+    private let kTableHeaderHeight: CGFloat = 250.0
     
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var dateLabel: UILabel!
-
     
+    var headerView:UIView!
     
+    var newNewsItems: NSMutableArray = []
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-        self.mainTableView.rowHeight = UITableViewAutomaticDimension
-        self.mainTableView.estimatedRowHeight = 180
+        mainTableView.rowHeight = UITableViewAutomaticDimension
+        mainTableView.estimatedRowHeight = 180
+
+    
+        newNewsItems = makeArrayOfNewsItems()
         
+        dateLabel.text = self.getDateForHeader()
+        
+        lowerTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override var prefersStatusBarHidden: Bool
@@ -29,19 +45,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return true
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return 5
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return newNewsItems.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         
         let cellIdentifier = "stretchyCell"
         
@@ -51,8 +66,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         
-        let newNewsItems = self.makeArrayOfNewsItems()
-    
         let newsItem = newNewsItems[indexPath.row]
         cell.configureCell(newsItem: newsItem as! NewsItem)
         
@@ -83,6 +96,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                        andStory: "I don't know much about this area of the world, and I don't like "))
         
         return newsItems
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        updateHeaderView()
+        
+    }
+    
+    func getDateForHeader() -> String
+    {
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "MMMM dd"
+        let dateResult = dateFormatter.string(from: date)
+        
+        return dateResult
+        
+    }
+    
+    func lowerTableView() -> Void
+    {
+        headerView = mainTableView.tableHeaderView
+        mainTableView.tableHeaderView = nil
+        mainTableView .addSubview(headerView)
+
+        mainTableView.contentOffset = CGPoint(x:0, y: -kTableHeaderHeight)
+        mainTableView.contentInset = UIEdgeInsetsMake(kTableHeaderHeight, 0.0, 0.0, 0.0)
+        
+    }
+    
+    func updateHeaderView() -> Void
+    {
+        let newHeight = kTableHeaderHeight
+        var headerRect = CGRect(x:0, y: -newHeight, width: mainTableView.bounds.width, height: kTableHeaderHeight)
+
+        if mainTableView.contentOffset.y < -kTableHeaderHeight {
+            
+            headerRect.origin.y = mainTableView.contentOffset.y
+            headerRect.size.height = -mainTableView.contentOffset.y
+            
+            
+        }
+        
+        headerView.frame = headerRect
+
         
     }
 

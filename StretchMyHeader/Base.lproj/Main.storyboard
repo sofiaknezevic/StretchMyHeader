@@ -59,13 +59,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYx-ZX-OPm">
-                                                    <rect key="frame" x="10" y="8" width="355" height="20.5"/>
+                                                    <rect key="frame" x="10" y="18" width="355" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-Z2-Tkm">
-                                                    <rect key="frame" x="10" y="36" width="339" height="32"/>
+                                                    <rect key="frame" x="10" y="46" width="339" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -73,9 +73,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="FYx-ZX-OPm" firstAttribute="leading" secondItem="72K-0L-CJi" secondAttribute="leading" constant="10" id="56E-oo-bpc"/>
-                                                <constraint firstItem="FYx-ZX-OPm" firstAttribute="top" secondItem="72K-0L-CJi" secondAttribute="top" constant="8" id="6Te-SE-zl0"/>
                                                 <constraint firstAttribute="trailing" secondItem="FYx-ZX-OPm" secondAttribute="trailing" constant="10" id="ECT-fH-1ti"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IuC-Z2-Tkm" secondAttribute="bottom" constant="8" id="Kyf-18-Z6y"/>
+                                                <constraint firstItem="FYx-ZX-OPm" firstAttribute="top" secondItem="72K-0L-CJi" secondAttribute="topMargin" constant="10" id="No4-IT-kE8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IuC-Z2-Tkm" secondAttribute="trailing" constant="18" id="gIr-zV-Qxa"/>
                                                 <constraint firstItem="IuC-Z2-Tkm" firstAttribute="top" secondItem="FYx-ZX-OPm" secondAttribute="bottom" constant="8" id="gpW-7R-QHg"/>
                                                 <constraint firstItem="IuC-Z2-Tkm" firstAttribute="leading" secondItem="72K-0L-CJi" secondAttribute="leadingMargin" constant="2" id="lFu-6R-v5e"/>
@@ -103,7 +103,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateLabel" destination="kt2-VS-BO5" id="cH6-ih-EWf"/>
+                        <outlet property="dateLabel" destination="kt2-VS-BO5" id="LPe-xF-HSo"/>
                         <outlet property="mainTableView" destination="c6K-5s-V8M" id="7HS-Le-fxV"/>
                     </connections>
                 </viewController>
